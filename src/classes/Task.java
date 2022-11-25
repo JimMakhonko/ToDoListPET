@@ -25,16 +25,28 @@ public class Task extends JPanel {
         taskName.setBorder(BorderFactory.createEmptyBorder());
         taskName.setBackground(Color.red);
 
-        this.add(taskName,BorderLayout.CENTER);
+        this.add(taskName, BorderLayout.CENTER);
 
         done = new JButton("done");
-        done.setPreferredSize(new Dimension(40,20));
+        done.setPreferredSize(new Dimension(40, 20));
         done.setBorder(BorderFactory.createEmptyBorder());
 
-        this.add(done,BorderLayout.EAST);
+        this.add(done, BorderLayout.EAST);
     }
-    public void changeIndex(int number){
-        this.index.setText(number+"");
+
+    public JButton getDone() {
+        return done;
+    }
+
+    public void changeIndex(int number) {
+        this.index.setText(number + "");
         this.revalidate();
+    }
+
+    public void changeState() {
+        this.setBackground(Color.GREEN);
+        taskName.setBackground(Color.GREEN);
+        checked = true;
+
     }
 }

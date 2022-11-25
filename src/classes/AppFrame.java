@@ -33,10 +33,17 @@ public class AppFrame extends JFrame {
     public void addListeners() {
         addTaskBtn.addMouseListener(new MouseAdapter() {
             @Override
-            public void mousePressed(MouseEvent e){
+            public void mousePressed(MouseEvent e) {
                 Task task = new Task();
                 list.add(task);
                 list.updateNumbers();
+                task.getDone().addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mousePressed(MouseEvent e) {
+                        task.changeState();
+                        revalidate();
+                    }
+                });
                 revalidate();
             }
         });
