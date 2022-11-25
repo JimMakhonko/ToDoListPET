@@ -1,6 +1,7 @@
 package classes;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class AppFrame extends JFrame {
     private TitleBar title;
@@ -12,5 +13,9 @@ public class AppFrame extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
 
+        title = new TitleBar();
+        list = new List();
+        btnPanel = new ButtonPanel();
+        this.add(title, BorderLayout.NORTH);
     }
 }

@@ -1,4 +1,12 @@
 package classes;
 
-public class TitleBar {
+import javax.swing.*;
+import java.awt.*;
+
+public class TitleBar extends JPanel {
+
+    TitleBar(){
+        this.setPreferredSize(new Dimension(400,50));
+        this.setBackground(Color.red);
+    }
 }
