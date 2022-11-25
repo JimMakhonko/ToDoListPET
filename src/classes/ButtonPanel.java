@@ -5,18 +5,28 @@ import javax.swing.border.Border;
 import java.awt.*;
 
 public class ButtonPanel extends JPanel {
-    private JButton addTask;
-    private JButton clear;
+    private JButton addTaskBtn;
+    private JButton clearBtn;
 
-Border emptyBorder = BorderFactory.createEmptyBorder();
+    Border emptyBorder = BorderFactory.createEmptyBorder();
+
     ButtonPanel() {
         this.setPreferredSize(new Dimension(400, 60));
-        this.setBackground(Color.red);
+        addTaskBtn = new JButton("Add Task");
+        addTaskBtn.setBorder(emptyBorder);
+        addTaskBtn.setFont(new Font(Font.SERIF, Font.PLAIN, 20));
+        this.add(addTaskBtn);
 
-        addTask = new JButton("Add Task");
-        addTask.setBorder(emptyBorder);
-        addTask.setFont(new Font(Font.SERIF,Font.PLAIN,20));
-        this.add(addTask);
+        this.add(Box.createHorizontalStrut(20));
+        clearBtn = new JButton("Clear completed Tasks");
+        clearBtn.setBorder(emptyBorder);
+        clearBtn.setFont(new Font(Font.SERIF, Font.PLAIN, 20));
+        this.add(clearBtn);
     }
-
+public JButton getAddTaskBtn(){
+        return addTaskBtn;
+}
+public JButton getClearBtn(){
+        return clearBtn;
+}
 }
