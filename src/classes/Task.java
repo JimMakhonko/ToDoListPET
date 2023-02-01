@@ -27,26 +27,31 @@ public class Task extends JPanel {
 
         this.add(taskName, BorderLayout.CENTER);
 
-        done = new JButton("done");
+        done = new JButton("Done");
         done.setPreferredSize(new Dimension(40, 20));
         done.setBorder(BorderFactory.createEmptyBorder());
 
         this.add(done, BorderLayout.EAST);
     }
 
-    public JButton getDone() {
-        return done;
-    }
 
     public void changeIndex(int number) {
         this.index.setText(number + "");
         this.revalidate();
     }
 
+    public JButton getDone() {
+        return done;
+    }
+
+    public boolean getState() {
+        return checked;
+    }
+
     public void changeState() {
         this.setBackground(Color.GREEN);
         taskName.setBackground(Color.GREEN);
         checked = true;
-
+        revalidate();
     }
 }

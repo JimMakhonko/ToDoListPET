@@ -41,10 +41,17 @@ public class AppFrame extends JFrame {
                     @Override
                     public void mousePressed(MouseEvent e) {
                         task.changeState();
+                        list.updateNumbers();
                         revalidate();
                     }
                 });
-                revalidate();
+            }
+        });
+        clearBtn.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                list.removeCompletedTask();
+                repaint();
             }
         });
     }

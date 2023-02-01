@@ -17,4 +17,13 @@ public class List extends JPanel {
             }
         }
     }
+    public void removeCompletedTask(){
+        for (Component c:getComponents()){
+            if(c instanceof  Task)if(((Task)c).getState())
+            {
+                remove(c);
+                updateNumbers();
+            }
+        }
+    }
 }
